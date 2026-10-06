@@ -1,137 +1,164 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+>
 
 <title>Google Sites Embed Test</title>
 
+
 <style>
 
-/* =========================================
-   RESET — IMPORTANT FOR GOOGLE SITES
-   ========================================= */
+/* =========================================================
+   ABSOLUTE RESET
+   ========================================================= */
 
-html,
-body {
+html {
+    width: 100%;
+    height: 100%;
+
     margin: 0;
     padding: 0;
-    width: 100%;
 
-    /* Prevent a scrollbar inside the iframe */
+    overflow: hidden;
+}
+
+
+body {
+    width: 100%;
+    height: 100%;
+
+    margin: 0;
+    padding: 0;
+
     overflow: hidden;
 
-    /* Match Google Sites */
-    background: transparent;
+    background: white;
 
-    font-family: Arial, sans-serif;
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    color: #171717;
 }
 
 
-/* =========================================
-   VARIABLES
-   ========================================= */
-
-:root {
-    --background: #ffffff;
-    --text: #171717;
-    --muted: #666666;
-
-    --accent: #d6a449;
-    --accent-light: #f5ead2;
-
-    --border: #e5e5e5;
+* {
+    box-sizing: border-box;
 }
 
 
-/* =========================================
-   MAIN CONTAINER
-   ========================================= */
+/* =========================================================
+   MAIN SITE
+   ========================================================= */
 
 .site {
+
     width: 100%;
+    height: 100%;
+
     margin: 0;
     padding: 0;
 
-    background: var(--background);
-    color: var(--text);
+    overflow: hidden;
+
+    background: white;
 }
 
 
-/* =========================================
+/* =========================================================
    HERO
-   ========================================= */
+   ========================================================= */
 
 .hero {
-    width: 100%;
 
-    min-height: 420px;
+    width: 100%;
+    height: 100%;
+
+    min-height: 500px;
+
+    margin: 0;
+    padding: 40px;
 
     display: flex;
+
     flex-direction: column;
 
     justify-content: center;
+
     align-items: center;
 
     text-align: center;
 
-    padding: 60px 30px;
-
-    box-sizing: border-box;
-
     background:
         radial-gradient(
-            circle at 50% 30%,
-            rgba(214,164,73,0.16),
+            circle at 50% 35%,
+            rgba(214, 164, 73, 0.16),
             transparent 55%
         );
+
+    overflow: hidden;
 }
 
 
 .hero h1 {
+
     margin: 0;
 
-    font-size: clamp(45px, 8vw, 90px);
+    font-size:
+        clamp(45px, 8vw, 90px);
 
     line-height: 0.95;
 
     letter-spacing: -3px;
+
+    animation:
+        fadeIn 0.8s ease;
 }
 
 
 .hero h1 span {
-    color: var(--accent);
+
+    color: #d6a449;
+
 }
 
 
 .hero p {
+
     max-width: 650px;
 
-    margin: 25px auto 0;
+    margin:
+        25px 0 0;
 
-    color: var(--muted);
+    color: #666;
 
     font-size: 18px;
 
     line-height: 1.6;
+
 }
 
 
-/* =========================================
-   BUTTON
-   ========================================= */
+.hero-button {
 
-.button {
     margin-top: 30px;
 
-    padding: 13px 24px;
+    padding:
+        13px 25px;
 
     border: none;
 
     border-radius: 100px;
 
-    background: var(--accent);
+    background: #d6a449;
 
     color: white;
 
@@ -147,191 +174,107 @@ body {
 }
 
 
-.button:hover {
-    transform: translateY(-3px);
+.hero-button:hover {
+
+    transform:
+        translateY(-3px);
 
     box-shadow:
-        0 8px 25px
-        rgba(214,164,73,0.35);
+        0 10px 30px
+        rgba(214,164,73,0.3);
 }
 
 
-/* =========================================
-   CONTENT
-   ========================================= */
+/* =========================================================
+   MESSAGE
+   ========================================================= */
 
-.content {
-    width: 100%;
+#message {
 
-    padding: 60px 30px;
+    height: 25px;
 
-    box-sizing: border-box;
-}
+    margin-top: 15px !important;
 
+    color: #777;
 
-.content h2 {
-    margin: 0 0 10px;
-
-    font-size: 32px;
-}
-
-
-.description {
-    margin-bottom: 35px;
-
-    color: var(--muted);
-}
-
-
-/* =========================================
-   CARDS
-   ========================================= */
-
-.cards {
-
-    display: grid;
-
-    grid-template-columns:
-        repeat(3, minmax(0, 1fr));
-
-    gap: 20px;
-
-    width: 100%;
-}
-
-
-.card {
-
-    padding: 25px;
-
-    border: 1px solid var(--border);
-
-    border-radius: 16px;
-
-    background: white;
-
-    transition:
-        transform 0.25s,
-        box-shadow 0.25s,
-        border-color 0.25s;
+    font-size: 14px !important;
 
 }
 
 
-.card:hover {
-
-    transform: translateY(-6px);
-
-    border-color: var(--accent);
-
-    box-shadow:
-        0 12px 35px
-        rgba(0,0,0,0.08);
-
-}
-
-
-.card h3 {
-    margin: 0 0 10px;
-}
-
-
-.card p {
-
-    margin: 0;
-
-    color: var(--muted);
-
-    line-height: 1.6;
-
-}
-
-
-/* =========================================
+/* =========================================================
    JAVASCRIPT DEMO
-   ========================================= */
+   ========================================================= */
 
 .demo {
 
-    margin-top: 50px;
+    position: absolute;
 
-    padding: 40px;
+    right: 25px;
+    bottom: 25px;
 
-    text-align: center;
+    padding:
+        12px 18px;
 
-    border-radius: 18px;
+    display: flex;
 
-    background: #fafafa;
+    align-items: center;
 
-    border: 1px solid var(--border);
+    gap: 12px;
 
+    background:
+        rgba(255,255,255,0.9);
+
+    border:
+        1px solid #ddd;
+
+    border-radius: 12px;
+
+    box-shadow:
+        0 5px 20px
+        rgba(0,0,0,0.08);
+}
+
+
+.demo-label {
+
+    font-size: 13px;
+
+    color: #777;
 }
 
 
 #counter {
 
-    margin: 15px;
-
-    font-size: 60px;
-
     font-weight: bold;
 
-    color: var(--accent);
+    color: #d6a449;
 
 }
 
 
 .demo button {
 
-    padding: 11px 20px;
-
     border: none;
 
-    border-radius: 8px;
+    padding:
+        6px 10px;
+
+    border-radius: 6px;
 
     background: #171717;
 
     color: white;
 
     cursor: pointer;
-
 }
 
 
-/* =========================================
-   MOBILE
-   ========================================= */
-
-@media (max-width: 700px) {
-
-    .cards {
-
-        grid-template-columns: 1fr;
-
-    }
-
-    .hero {
-
-        min-height: 350px;
-
-        padding: 40px 20px;
-
-    }
-
-    .content {
-
-        padding: 40px 20px;
-
-    }
-
-}
-
-
-/* =========================================
+/* =========================================================
    ANIMATION
-   ========================================= */
+   ========================================================= */
 
-@keyframes appear {
+@keyframes fadeIn {
 
     from {
 
@@ -354,15 +297,47 @@ body {
 }
 
 
-.hero > * {
+/* =========================================================
+   MOBILE
+   ========================================================= */
 
-    animation:
-        appear 0.8s ease both;
+@media (max-width: 600px) {
+
+    .hero {
+
+        padding:
+            25px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size:
+            clamp(40px, 13vw, 65px);
+
+    }
+
+
+    .hero p {
+
+        font-size: 16px;
+
+    }
+
+
+    .demo {
+
+        right: 15px;
+
+        bottom: 15px;
+
+    }
 
 }
 
-
 </style>
+
 </head>
 
 
@@ -372,114 +347,63 @@ body {
 <div class="site">
 
 
-    <!-- =========================
-         CUSTOM HERO
-         ========================= -->
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
     <section class="hero">
 
         <h1>
-            Your <span>Website</span>
+
+            Your
+            <span>Website</span>
+
         </h1>
 
+
         <p>
-            This entire section is custom HTML and CSS
-            embedded inside Google Sites.
+
+            This is a completely custom HTML,
+            CSS and JavaScript page embedded
+            inside Google Sites.
+
         </p>
 
+
         <button
-            class="button"
-            onclick="showMessage()">
+            class="hero-button"
+            onclick="showMessage()"
+        >
 
             Test JavaScript
 
         </button>
 
+
         <p id="message"></p>
 
-    </section>
 
-
-    <!-- =========================
-         CUSTOM CONTENT
-         ========================= -->
-
-    <section class="content">
-
-        <h2>
-            Custom HTML Section
-        </h2>
-
-        <p class="description">
-            Everything below is controlled by this HTML file.
-        </p>
-
-
-        <div class="cards">
-
-
-            <div class="card">
-
-                <h3>
-                    HTML
-                </h3>
-
-                <p>
-                    The structure of this entire section
-                    is defined by us.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>
-                    CSS
-                </h3>
-
-                <p>
-                    Colours, spacing, borders, animations,
-                    grids and responsive behaviour.
-                </p>
-
-            </div>
-
-
-            <div class="card">
-
-                <h3>
-                    JavaScript
-                </h3>
-
-                <p>
-                    Interactive elements can respond
-                    to the visitor.
-                </p>
-
-            </div>
-
-
-        </div>
-
-
-        <!-- =========================
-             JAVASCRIPT TEST
-             ========================= -->
+        <!-- =================================================
+             SMALL JAVASCRIPT TEST
+             ================================================= -->
 
         <div class="demo">
 
-            <h3>
-                JavaScript Counter
-            </h3>
+            <span class="demo-label">
+                Counter
+            </span>
 
-            <div id="counter">
+
+            <span id="counter">
                 0
-            </div>
+            </span>
 
-            <button onclick="increment()">
 
-                Increase
+            <button
+                onclick="increment()"
+            >
+
+                +
 
             </button>
 
@@ -495,29 +419,34 @@ body {
 
 <script>
 
-/* =========================================
+/* =========================================================
    JAVASCRIPT TEST 1
-   ========================================= */
+   ========================================================= */
 
 function showMessage() {
 
-    document.getElementById("message").textContent =
+    document
+        .getElementById("message")
+        .textContent =
         "JavaScript works!";
 
 }
 
 
-/* =========================================
+/* =========================================================
    JAVASCRIPT TEST 2
-   ========================================= */
+   ========================================================= */
 
 let count = 0;
+
 
 function increment() {
 
     count++;
 
-    document.getElementById("counter").textContent =
+    document
+        .getElementById("counter")
+        .textContent =
         count;
 
 }
@@ -526,5 +455,6 @@ function increment() {
 
 
 </body>
+
 </html>
 ```
